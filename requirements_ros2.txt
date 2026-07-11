@@ -1,8 +1,8 @@
-# ROS2 specific dependencies (in addition to requirements.txt)
-rclpy>=0.0.0
-rclcpp>=0.0.0
-std_msgs>=0.5.0
-sensor_msgs>=0.5.0
-geometry_msgs>=0.5.0
-visualization_msgs>=0.5.0
-cv_bridge>=0.5.0
+# Optional ROS2 dependencies
+# Install with: pip install -r requirements_ros2.txt
+
+rclpy>=3.0.0
+sensor-msgs>=0.1.0
+geometry-msgs>=0.1.0
+cv-bridge>=3.0.0
+rospkg>=1.15.0

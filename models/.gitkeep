@@ -1,0 +1,8 @@
+# Models directory
+# Place your YOLO lane segmentation model here
+# Example: lane_segmentation.pt
+
+# Download or train YOLO model:
+# https://github.com/ultralytics/ultralytics
+
+.gitkeep
