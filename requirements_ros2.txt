@@ -1,0 +1,8 @@
+# ROS2 specific dependencies (in addition to requirements.txt)
+rclpy>=0.0.0
+rclcpp>=0.0.0
+std_msgs>=0.5.0
+sensor_msgs>=0.5.0
+geometry_msgs>=0.5.0
+visualization_msgs>=0.5.0
+cv_bridge>=0.5.0
