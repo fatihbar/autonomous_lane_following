@@ -1,0 +1,41 @@
+# Perception Configuration
+# YOLO lane detection settings
+
+model:
+  path: "models/lane_segmentation.pt"
+  confidence_threshold: 0.5
+  mask_threshold: 0.5
+  imgsz: 640
+  device: null  # auto-detect (cuda/cpu)
+  use_half: true
+
+roi:
+  top_ratio: 0.0      # Start from top
+  bottom_ratio: 1.0   # Include full height
+
+lane_detection:
+  min_lane_area: 100  # Minimum pixels for valid detection
+  polyfit_degree: 2   # Polynomial order for fitting
+  lane_width_pixels: 200
+  morph_kernel_size: 5
+
+bev:
+  enabled: false
+  output_width: 640
+  output_height: 480
+  # Source trapezoid points in camera view
+  src_points:
+    - [100, 400]
+    - [540, 400]
+    - [0, 480]
+    - [640, 480]
+  # Destination rectangle in BEV
+  dst_points:
+    - [100, 0]
+    - [540, 0]
+    - [0, 480]
+    - [640, 480]
+
+debug:
+  view: true
+  publish_debug_image: true

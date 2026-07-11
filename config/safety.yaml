@@ -1,0 +1,21 @@
+# Safety Supervisor Configuration
+# Highest priority monitoring and intervention
+
+thresholds:
+  min_lane_confidence: 0.3
+  min_fusion_confidence: 0.25
+  max_no_lane_time_s: 2.0          # Max time without lane before safety intervention
+  max_virtual_lane_time_s: 3.0      # Max time on virtual lane
+  max_inference_latency_ms: 100.0
+  min_fps: 10.0
+
+lidar:
+  emergency_stop_distance_m: 0.5
+
+vehicle_control:
+  dry_run: true  # Don't send real commands unless explicitly enabled
+  enable_vehicle_output: false  # Require explicit flag to control vehicle
+
+watchdog:
+  timeout_ms: 1000  # Watchdog timeout
+  enabled: true

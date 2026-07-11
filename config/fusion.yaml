@@ -1,0 +1,27 @@
+# Sensor Fusion Configuration
+# Combines YOLO, Hough, Virtual Lane, and LiDAR
+
+weights:
+  yolo: 0.7
+  hough: 0.4
+  virtual_lane: 0.2
+  lidar: 0.3
+
+confidence_thresholds:
+  yolo_primary: 0.5      # YOLO confidence to be primary source
+  hough_use: 0.3         # Minimum Hough confidence to use
+  min_fusion: 0.25       # Minimum fusion confidence for valid result
+
+virtual_lane:
+  enabled: true
+  history_size: 30
+  max_duration_s: 3.0    # Safety: max time on virtual lane
+  smoothing_alpha: 0.3
+
+lidar:
+  weight: 0.3
+  enabled: true
+  emergency_stop_distance_m: 0.5
+  roi_forward_m: 5.0
+  roi_width_m: 3.0
+  height_threshold_m: 0.1

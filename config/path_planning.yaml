@@ -1,0 +1,8 @@
+# Path Planning Configuration
+
+lookahead:
+  distance_m: 1.0        # Physical lookahead distance
+  distance_pixels: 100   # Lookahead in image pixels
+
+smoothing:
+  alpha: 0.3  # Exponential smoothing factor (0-1)

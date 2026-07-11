@@ -1,0 +1,24 @@
+# Visualization and Debug Configuration
+
+visualization:
+  enabled: true
+  show_raw_image: true
+  show_mask: true
+  show_lane_boundaries: true
+  show_centerline: true
+  show_lookahead_point: true
+  show_confidence_bars: true
+  show_system_status: true
+  show_fps: true
+
+debug_colors:
+  left_boundary: [255, 0, 0]      # Blue
+  right_boundary: [0, 0, 255]     # Red
+  centerline: [0, 255, 0]         # Green
+  virtual_lane: [0, 255, 255]     # Yellow
+  lookahead: [255, 255, 0]        # Cyan
+
+output:
+  save_video: true
+  output_dir: "output_videos"
+  fourcc: "mp4v"  # Video codec

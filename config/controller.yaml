@@ -1,0 +1,21 @@
+# Vehicle Controller Configuration
+# Pure Pursuit steering and speed control
+
+vehicle:
+  wheelbase_m: 2.6
+
+pure_pursuit:
+  lookahead_distance_m: 1.0
+  max_steering_deg: 35.0
+  steering_smoothing_alpha: 0.3
+
+speed:
+  max_mps: 2.0      # Maximum speed
+  min_mps: 0.5      # Minimum speed
+  slow_mps: 0.8     # Speed when reducing due to low confidence
+
+confidence_based_speed:
+  # Speed reduction based on fusion confidence
+  high: 2.0         # confidence >= 0.6
+  medium: 1.4       # confidence >= 0.4
+  low: 0.8          # confidence < 0.4

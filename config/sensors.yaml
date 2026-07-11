@@ -1,0 +1,70 @@
+# Sensor Configuration
+# Input sources and ROS2 topics
+
+sensors:
+  camera:
+    type: "zed2"  # or "usb"
+    source: "/zed/rgb/image"  # ROS2 topic or USB index
+    resolution: [1280, 720]
+    fps: 30
+
+  lidar:
+    type: "velodyne"
+    source: "/velodyne_points"  # ROS2 topic
+    enabled: true
+    # First version: LiDAR optional
+    required: false
+
+  imu:
+    type: "zed2"
+    source: "/zed/imu/data"
+    enabled: false
+
+ros2:
+  # ROS2 topic mapping
+  topics:
+    # Input
+    camera_rgb: "/zed/rgb/image"
+    camera_depth: "/zed/depth/image"
+    camera_info: "/zed/camera_info"
+    lidar_points: "/velodyne_points"
+    vehicle_speed: "/vehicle/speed"
+    vehicle_imu: "/vehicle/imu"
+    manual_override: "/vehicle/manual_override"
+    
+    # Output
+    lane_mask: "/perception/lane_mask"
+    lane_debug: "/perception/lane_debug_image"
+    lane_confidence: "/perception/lane_confidence"
+    lane_left: "/perception/lane_left_boundary"
+    lane_right: "/perception/lane_right_boundary"
+    lane_centerline: "/perception/lane_centerline"
+    
+    hough_left: "/fallback/hough_left_lane"
+    hough_right: "/fallback/hough_right_lane"
+    hough_centerline: "/fallback/hough_centerline"
+    hough_confidence: "/fallback/hough_confidence"
+    
+    lidar_obstacles: "/lidar/obstacles"
+    lidar_free_space: "/lidar/free_space"
+    lidar_emergency: "/lidar/emergency_stop_required"
+    
+    fusion_lane: "/fusion/final_lane"
+    fusion_source: "/fusion/lane_source"
+    fusion_confidence: "/fusion/fusion_confidence"
+    
+    planning_path: "/planning/path"
+    planning_lookahead: "/planning/lookahead_point"
+    
+    control_steering: "/control/steering_cmd"
+    control_throttle: "/control/throttle_cmd"
+    control_brake: "/control/brake_cmd"
+    control_speed: "/control/target_speed"
+    
+    safety_state: "/safety/state"
+    safety_emergency: "/safety/emergency_stop"
+    safety_warnings: "/safety/warnings"
+    
+    debug_fps: "/debug/fps"
+    debug_status: "/debug/system_status"
+    debug_diagnostics: "/debug/ai_diagnostics"

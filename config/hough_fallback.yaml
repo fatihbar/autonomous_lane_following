@@ -1,0 +1,31 @@
+# Hough Transform Fallback Configuration
+# Activates when YOLO confidence is low
+
+enabled: true
+
+canny:
+  low_threshold: 50
+  high_threshold: 150
+
+hough:
+  rho: 1.0
+  theta: 0.01745  # ~1 degree in radians
+  threshold: 40
+  min_line_length: 40
+  max_line_gap: 80
+
+lane_detection:
+  min_slope_abs: 0.3    # Reject nearly horizontal lines
+  max_slope_abs: 3.0    # Reject nearly vertical lines
+  lane_width_pixels: 200
+
+roi:
+  top_ratio: 0.55    # Start from middle of image
+  bottom_ratio: 1.0   # Include bottom
+
+confidence:
+  threshold: 0.45     # Minimum confidence for fallback to use Hough
+
+debug:
+  view: true
+  publish_debug_image: true
